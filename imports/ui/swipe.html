@@ -1,3 +1,27 @@
 <template name="swipe">
-  swipe
+
+<h1>swipe</h1>
+{{> buttons}}
+
+{{> eventName}}
+<ul>
+    {{#each events}}
+      {{> event}}
+    {{/each}}
+</ul>
+
+</template>
+
+<template name="event">
+ <!-- <li>{{CODEID}}</li>-->
+  <li>{{CODEID}}</li>
+</template>
+
+<template name="buttons">
+    <button id="like">LIKE</button>
+    <button id="dislike">DISLIKE</button>
+</template>
+
+<template name="eventName">
+	{{name}}
 </template>

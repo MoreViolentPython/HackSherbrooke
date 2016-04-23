@@ -15,4 +15,4 @@ import '../imports/ui/selection.css';
 import '../imports/ui/login.js';
 import '../imports/ui/login.css';
 
-import '../imports/ui/swipe.html';
+import '../imports/ui/swipe.js';
