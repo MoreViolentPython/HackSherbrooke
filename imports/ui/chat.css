@@ -1,16 +1,16 @@
-html,body{height:100%;}
+.chat html,body{height:100%;}
 
-h1 {
+.chat h1 {
   color: #FD717D;
   text-align: center;
 }
 
-ul {
+.chat ul {
   margin: 0;
   padding: 0;
 }
 
-li {
+.chat li {
   position: relative;
   list-style: none;
   padding: 15px;
@@ -22,7 +22,7 @@ li {
   margin-right: 25px;
 }
 
-.new-message {
+.chat .new-message {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -34,39 +34,39 @@ li {
   background-color: white;
 }
 
-.event {
+.chat .event {
   background-color: #FD717D;
   height: 100vh;
 }
 
-.chat-container {
+.chat .chat-container {
   background-color: white;
   position: relative;
   height: 100vh;
 
 }
 
-.chat-list {
+.chat .chat-list {
   height: 80%;
   overflow: scroll;
 }
 
-.button-send {
+.chat .button-send {
   width: 20%;
   float: right;
   margin-right: 25px;
 }
 
-.input-message {
+.chat .input-message {
   float: left;
   margin-left: 25px;
 }
 
-#input-textfield-message {
+.chat #input-textfield-message {
   width: 70%
 }
 
-.card {
+.chat .card {
   background-color: white;
   height: 400px;
   width: 300px;
@@ -76,7 +76,7 @@ li {
   margin-top: 100px;
 }
 
-.info {
+.chat .info {
   height: 200px;
   width: 300px;
   margin: auto;

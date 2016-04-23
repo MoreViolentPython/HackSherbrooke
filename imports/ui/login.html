@@ -1,6 +1,38 @@
 <template name="login">
-  {{> loginButtons}}
-  {{#if currentUser}}
+  <div class="login">
+    {{#if currentUser}}
+      {{> dashboard}}
+    {{else}}
+      {{> register}}
+      {{> loginForm}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="register">
+  <div class="rectangle">
+    <form>
+      <h2>CRÉATION DE COMPTE</h2>
+      <input type="email" name="registerEmail" placeholder="  username"><br />
+      <input type="password" name="registerPassword" placeholder="  password"><br />
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</template>
+
+<template name="loginForm">
+  <div class="rectangle">
+    <form>
+      <h2>CONNEXION</h2>
+      <input type="email" name="loginEmail" placeholder="  username"><br />
+      <input type="password" name="loginPassword" placeholder="  password"><br />
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</template>
+
+<template name="dashboard">
+    <p>Bienvenue {{email}}</p>
     <a href="/selection">Enter application</a>
-  {{/if}}
+    <p><a href="#" class="logout">Déconnection</a></p>
 </template>
