@@ -8,6 +8,11 @@
     border: none;
     border-radius:10px;
     margin-bottom: 8px;
+    padding-left: 8px;
+}
+
+.login input:focus {
+  outline: none;
 }
 
 .rectangle {

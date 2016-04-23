@@ -5,22 +5,22 @@ import './login.html';
 Template.register.events({
     'submit form': function(event) {
         event.preventDefault();
-        var emailVar = event.target.registerEmail.value;
+        var usernameVar = event.target.registerUsername.value;
         var passwordVar = event.target.registerPassword.value;
         Accounts.createUser({
-            username: emailVar,
+            username: usernameVar,
             password: passwordVar
         });
-        Meteor.loginWithPassword(emailVar, passwordVar);
+        Meteor.loginWithPassword(usernameVar, passwordVar);
     }
 });
 
 Template.loginForm.events({
     'submit form': function(event){
         event.preventDefault();
-        var emailVar = event.target.loginEmail.value;
+        var usernameVar = event.target.loginUsername.value;
         var passwordVar = event.target.loginPassword.value;
-        Meteor.loginWithPassword(emailVar, passwordVar);
+        Meteor.loginWithPassword(usernameVar, passwordVar);
     }
 });
 

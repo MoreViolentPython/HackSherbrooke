@@ -13,9 +13,9 @@
   <div class="rectangle">
     <form>
       <h2>CRÉATION DE COMPTE</h2>
-      <input type="email" name="registerEmail" placeholder="  username"><br />
-      <input type="password" name="registerPassword" placeholder="  password"><br />
-      <input type="submit" value="Register">
+      <input type="username" name="registerUsername" placeholder="username"><br />
+      <input type="password" name="registerPassword" placeholder="password"><br />
+      <input type="submit" value="Créer">
     </form>
   </div>
 </template>
@@ -23,16 +23,16 @@
 <template name="loginForm">
   <div class="rectangle">
     <form>
-      <h2>CONNEXION</h2>
-      <input type="email" name="loginEmail" placeholder="  username"><br />
-      <input type="password" name="loginPassword" placeholder="  password"><br />
-      <input type="submit" value="Login">
+      <h2>CONNECTION</h2>
+      <input type="text" name="loginUsername" placeholder="username"><br />
+      <input type="password" name="loginPassword" placeholder="password"><br />
+      <input type="submit" value="Go">
     </form>
   </div>
 </template>
 
 <template name="dashboard">
-    <p>Bienvenue {{email}}</p>
+    <p>Bienvenue {{currentUser.username}}</p>
     <a href="/selection">Enter application</a>
     <p><a href="#" class="logout">Déconnection</a></p>
 </template>
