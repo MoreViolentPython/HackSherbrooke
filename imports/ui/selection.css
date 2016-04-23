@@ -1,0 +1,33 @@
+.selection .vignette {
+    border-radius: 17px;
+    padding: 20px;
+}
+
+.selection .vignette .image {
+    height: 100%;
+    width: 100%;
+    border-radius: 17px;
+    max-height: 180px;
+}
+
+.selection .vignette.checked .image {
+    opacity: .7;
+}
+
+.selection .vignette .check-icon {
+    position: absolute;
+    right: 28px;
+    top: 28px;
+}
+
+.selection .vignette .check-icon {
+    display: none;
+}
+
+.selection .vignette.checked .check-icon {
+    display: block;
+}
+
+.selection .next {
+    text-align: right;
+}
