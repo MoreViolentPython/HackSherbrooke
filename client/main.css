@@ -1,1 +1,11 @@
 /* CSS declarations go here */
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  background: #FD717D;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
