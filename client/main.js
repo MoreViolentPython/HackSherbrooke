@@ -1,4 +1,5 @@
 import '../imports/router.js';
+import '../imports/ui/chat.js';
 
 import '../imports/ui/home.html';
 import '../imports/ui/login.html';
