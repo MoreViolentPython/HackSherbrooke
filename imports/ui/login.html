@@ -1,4 +1,6 @@
 <template name="login">
   {{> loginButtons}}
+  {{#if currentUser}}
+    <a href="/selection">Enter application</a>
+  {{/if}}
 </template>
-
