@@ -1,8 +1,20 @@
 /* CSS declarations go here */
-
 body {
   background-color: #FD717D;
   color: #fff;
+}
+
+html,body{height:100%;}
+
+h1 {
+  color: #FD717D;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
 }
 
 li {
@@ -14,5 +26,5 @@ li {
   margin-top: 10px;
   color: white;
   font-family: 'Roboto', sans-serif;
+  margin-right: 25px;
 }
-
