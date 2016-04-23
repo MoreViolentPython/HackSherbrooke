@@ -12,6 +12,7 @@ Template.register.events({
             password: passwordVar
         });
         Meteor.loginWithPassword(usernameVar, passwordVar);
+        window.location.href = '/selection';
     }
 });
 
@@ -21,6 +22,7 @@ Template.loginForm.events({
         var usernameVar = event.target.loginUsername.value;
         var passwordVar = event.target.loginPassword.value;
         Meteor.loginWithPassword(usernameVar, passwordVar);
+        window.location.href = '/selection';
     }
 });
 
