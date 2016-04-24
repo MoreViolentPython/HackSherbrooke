@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
-import { Events } from '../api/events.js';
+import { EventsSherbrooke } from '../api/events.js';
+import { EventsQuebec } from '../api/events.js';
 
 import './swipe.html'
 
@@ -10,9 +11,14 @@ Session.setDefault("counter", 0);
 Session.setDefault("prediction", "");
 
 var events;
+var category = "sherbrooke";
 Template.swipe.helpers({
    event(index) {
-      events = Events.find({}).fetch();
+      if (category == "quebec") {
+        events = EventsQuebec.find({}).fetch();
+      } else if (category == "sherbrooke") {
+        events = EventsSherbrooke.find({}).fetch();
+      }
       Session.set("prediction", bayes.classify(events[Session.get("counter")].DESCRIP));
       return events[index];
    },
@@ -37,4 +43,17 @@ Template.buttons.events({
     bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
     console.log('dislike');
   }
+});
+
+Template.categories.helpers({
+    categories: function(){
+        return ["quebec", "sherbrooke"];
+    }
+});
+
+Template.categories.events({
+    "change #category-select": function (event, template) {
+      category = $(event.currentTarget).val();
+      Session.set("counter", 0);
+    }
 });

@@ -1,6 +1,6 @@
 <template name="swipe">
-
-<h1>Activités</h1>
+  <h1>Activités</h1>
+  {{> categories}}
   {{#with event counter}}
     <h3>{{TITRE}}</h3>
     <p>
@@ -9,16 +9,21 @@
       {{DESCRIP}}
     </p>
   {{/with}}
-{{> buttons}}
-<p>Prédiction: {{ prediction }}</p>
-</template>
-
-<template name="events">
-
+  {{> buttons}}
+  <p>Prédiction: {{ prediction }}</p>
 </template>
 
 <template name="buttons">
     <button id="like">LIKE</button>
     <button id="dislike">DISLIKE</button>
+</template>
+
+<template name="categories">
+  <select id="category-select">
+      <option disabled="disabled" selected="selected">Please Select</option> 
+      {{#each categories}}
+          <option value="{{this}}">{{this}}</option>
+      {{/each}}
+  </select>
 </template>
 
