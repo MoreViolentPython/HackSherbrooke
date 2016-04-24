@@ -1,0 +1,20 @@
+<template name="register">
+  <div class="register">
+    {{#if currentUser}}
+      {{> dashboard}}
+    {{else}}
+      {{> registerForm}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="registerForm">
+  <div class="rectangle">
+    <form>
+      <h2>CRÉATION DE COMPTE</h2>
+      <input type="username" name="registerUsername" placeholder="username"><br />
+      <input type="password" name="registerPassword" placeholder="password"><br />
+      <input type="submit" value="Créer">
+    </form>
+  </div>
+</template>
