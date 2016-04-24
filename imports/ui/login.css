@@ -1,9 +1,9 @@
-.login {
+.login, .register {
   text-align: center;
   margin-top: 40px;
 }
 
-.login input {
+.login input, .register input {
     background: rgba(255,255,255,0.50);
     border: none;
     border-radius:10px;
@@ -11,7 +11,7 @@
     padding-left: 8px;
 }
 
-.login input:focus {
+.login input:focus, .register input:focus {
   outline: none;
 }
 
