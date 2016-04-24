@@ -6,6 +6,16 @@ import './swipe.html'
 
 var classifier = require('classifier');
 var bayes = new classifier.Bayesian();
+var geo = {
+  sherbrooke: {
+    lat: 45.411224,
+    lng: -71.880756
+  },
+  quebec: {
+    lat: 46.828333,
+    lng: -71.206692
+  }
+}
 
 Session.setDefault("counter", 0);
 Session.setDefault("prediction", "");
@@ -72,8 +82,15 @@ Template.buttons.events({
 
 Template.categories.events({
     "change #category-select": function (event, template) {
+
       category = $(event.currentTarget).val();
       Session.set("counter", 100);
       Session.set("counter", 0);
+
+      var selectedCategorie = $("#category-select").val()
+      GoogleMaps.maps.eventMap.instance.setCenter(
+        new google.maps.LatLng(geo[selectedCategorie].lat, geo[selectedCategorie].lng)
+      );
+
     }
 });
