@@ -3,28 +3,28 @@ import { Events } from '../api/events.js';
 
 import './swipe.html'
 
-var nbSkip = 0;
-
+Session.setDefault("counter", 0);
+var events;
 Template.swipe.helpers({
-   events() {
-     return Events.find({});
+   event(index) {
+      events = Events.find({}).fetch();
+      return events[index];
    },
-   name(){
-   	var options = { "skip" : nbSkip }
-   	nbSkip = nbSkip + 1;
-   	console.log(Events.findOne({}, options).CODEID);
-   	//return Events.findOne({}, options).CODEID;
-   	return Events.findOne({}, options).CODEID;
+   counter(){
+   	return Session.get("counter");
    },
 });
 
 Template.buttons.events({
-  "click #like": function (e) {
+  "click #like": function (e, template) {
     e.preventDefault();
+    Router.go('/chat?id=' + Session.get("counter"));
     console.log('like');
   },
   "click #dislike": function (e) {
+    Session.set("counter", Session.get("counter") + 1);
     e.preventDefault();
     console.log('dislike');
+
   }
 });

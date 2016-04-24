@@ -1,6 +1,6 @@
 .chat html,body{height:100%;}
 
-.chat h1 {
+.chat #title {
   color: #FD717D;
   text-align: center;
 }

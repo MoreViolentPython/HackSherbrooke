@@ -1,27 +1,23 @@
 <template name="swipe">
 
-<h1>swipe</h1>
+<h1>Activités</h1>
+  {{#with event counter}}
+    <h3>{{TITRE}}</h3>
+    <p>
+      Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
+      Coût : {{CO}}<br />
+      {{DESCRIP}}
+    </p>
+  {{/with}}
 {{> buttons}}
-
-{{> eventName}}
-<ul>
-    {{#each events}}
-      {{> event}}
-    {{/each}}
-</ul>
 
 </template>
 
-<template name="event">
- <!-- <li>{{CODEID}}</li>-->
-  <li>{{CODEID}}</li>
+<template name="events">
+
 </template>
 
 <template name="buttons">
     <button id="like">LIKE</button>
     <button id="dislike">DISLIKE</button>
-</template>
-
-<template name="eventName">
-	{{name}}
 </template>
