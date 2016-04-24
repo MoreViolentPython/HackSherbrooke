@@ -74,6 +74,8 @@
 
   margin: auto;
   margin-top: 100px;
+  color: #FD717D;
+  padding: 15px;
 }
 
 .chat .info {
@@ -81,9 +83,8 @@
   width: 300px;
   margin: auto;
   margin-top: 50px;
-  color: white;
 }
 
-img {
-  margin-left: 35px;
+.chat #username {
+  font-size: 24px;
 }

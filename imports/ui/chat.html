@@ -4,14 +4,11 @@
     <div class="container col-md-6 event">
 
       <div class="card">
-        <p id="title">{{event.TITRE}}</p>
-        <img src="/images/randonnee.png" alt="">
-      </div>
-      <div class="info">
-
-          <p>{{event.DESCRIP}}</p>
+        <h2 id="title">{{event.TITRE}}</h2>
+        <p id="description-activity">{{event.DESCRIP}}</p>
 
       </div>
+
 
     </div>
     <div class="container col-md-6 chat-container">
@@ -32,8 +29,9 @@
 </template>
 
 <template name="message">
-  <li>{{username}} - {{text}}</li>
+  <li><strong id="username">{{username}}</strong><p>{{text}}</p></li>
 </template>
+
 
 <template name="input">
   <form class="form-inline new-message" role="form">

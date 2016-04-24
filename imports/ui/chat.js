@@ -36,4 +36,3 @@ Template.input.events({
     target.text.value = '';
   },
 });
-
