@@ -15,6 +15,10 @@ var geo = {
   quebec: {
     lat: 46.828333,
     lng: -71.206692
+  },
+  gatineau: {
+    lat: 45.504436,
+    lng: -75.691761
   }
 }
 
@@ -112,9 +116,15 @@ Template.categories.events({
       Session.set("counter", 0);
 
       var selectedCategorie = $("#category-select").val()
+      var cityLatLng = {lat: geo[selectedCategorie].lat, lng: geo[selectedCategorie].lng};
       GoogleMaps.maps.eventMap.instance.setCenter(
-        new google.maps.LatLng(geo[selectedCategorie].lat, geo[selectedCategorie].lng)
+        new google.maps.LatLng(cityLatLng.lat, cityLatLng.lng)
       );
+
+      var marker = new google.maps.Marker({
+        position: cityLatLng,
+        map: GoogleMaps.maps.eventMap.instance,
+      });
 
     }
 });
