@@ -22,3 +22,7 @@
   padding-bottom: 30px;
   margin: 0 auto 0 auto;
 }
+
+.dashboard {
+  display: none;
+}

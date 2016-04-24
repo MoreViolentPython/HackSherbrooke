@@ -22,3 +22,7 @@ Template.dashboard.events({
         Meteor.logout();
     }
 });
+
+Template.dashboard.onCreated(function() {
+  window.location.href = '/selection';
+});
