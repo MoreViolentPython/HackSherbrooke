@@ -1,4 +1,4 @@
-# HackSherbrooke
+# City Share
 A new way to discover the city! 
 
 ## Inspiration
@@ -29,3 +29,6 @@ Pour offrir notre service, les jeux de données des évènements des villes de G
 + Avoir développé une application que nous utiliserions nous-même
 + Utiliser Meteor, dont les membres de l’équipe avaient beaucoup à apprendre
 + L’atmosphère de travail a été agréable toute la fin de semaine!
+
+## Devpost
+See the whole story on [Devpost](http://devpost.com/software/cityshare/)
