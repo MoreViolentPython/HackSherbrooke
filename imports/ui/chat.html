@@ -4,8 +4,14 @@
     <div class="container col-md-6 event">
 
       <div class="card">
+      {{#if gatineau}}
+        <h2 id="title">{{event.properties.TITRE}}</h2>
+        <p id="description-activity">{{event.properties.DESCRIP}}</p>
+      {{else}}
         <h2 id="title">{{event.TITRE}}</h2>
         <p id="description-activity">{{event.DESCRIP}}</p>
+      {{/if}}
+        
 
       </div>
 

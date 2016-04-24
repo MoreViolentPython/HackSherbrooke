@@ -53,7 +53,7 @@ Template.swipe.helpers({
         } else if (category == "gatineau") {
             events = EventsGatineau.find({}).fetch();
         }
-        //Session.set("prediction", bayes.classify(events[Session.get("counter")].DESCRIP));
+        Session.set("prediction", bayes.classify(events[Session.get("counter")].DESCRIP));
         return events[index];
     },
     counter(){
@@ -99,12 +99,12 @@ Template.buttons.events({
   "click #like": function (e, template) {
     e.preventDefault();
     window.location.href = '/chat?id=' + Session.get("counter") + '&ville=' + category;
-    //bayes.train(events[Session.get("counter")].DESCRIP, "like");
+    bayes.train(events[Session.get("counter")].DESCRIP, "like");
   },
   "click #dislike": function (e) {
     Session.set("counter", Session.get("counter") + 1);
     e.preventDefault();
-    //bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
+    bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
   }
 });
 

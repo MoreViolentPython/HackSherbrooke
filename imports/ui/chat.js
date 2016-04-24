@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Messages } from '../api/messages.js';
 import { EventsSherbrooke } from '../api/events.js';
 import { EventsQuebec } from '../api/events.js';
+import { EventsGatineau } from '../api/events.js';
 
 import './chat.html';
 
@@ -10,21 +11,30 @@ var getQueryParameters = function(str) {
 }
 
 var activiteId = getQueryParameters().id;
+var category = getQueryParameters().ville;
 
 Template.chat.helpers({
   messages() {
-    return Messages.find({activiteId: activiteId});
+    return Messages.find({activiteId: activiteId, ville: category});
   },
   event() {
-    var category = getQueryParameters().ville;
     var events;
     if (category == "quebec") {
-      events = EventsQuebec.find({}).fetch();
+        events = EventsQuebec.find({}).fetch();
     } else if (category == "sherbrooke") {
-      events = EventsSherbrooke.find({}).fetch();
+        events = EventsSherbrooke.find({}).fetch();
+    } else if (category == "gatineau") {
+        events = EventsGatineau.find({}).fetch();
     }
     return events[activiteId];
-  }
+  },
+  gatineau(){
+    if (category == "gatineau") {
+        return true;
+    } else {
+        return false;
+    }
+  },
 });
 
 Template.input.events({
@@ -36,6 +46,7 @@ Template.input.events({
     Messages.insert({
       username: Meteor.user().username,
       activiteId: activiteId,
+      ville: category,
       text,
       createdAt: new Date(),
     });
