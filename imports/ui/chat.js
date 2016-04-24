@@ -8,13 +8,15 @@ var getQueryParameters = function(str) {
   return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
 }
 
+var activiteId = getQueryParameters().id;
+
 Template.chat.helpers({
   messages() {
-    return Messages.find({});
+    return Messages.find({activiteId: activiteId});
   },
   event() {
     var events = Events.find({}).fetch();
-    return events[getQueryParameters().id];
+    return events[activiteId];
   }
 });
 
@@ -26,6 +28,7 @@ Template.input.events({
     const text = target.text.value;
     Messages.insert({
       username: Meteor.user().username,
+      activiteId: activiteId,
       text,
       createdAt: new Date(),
     });
