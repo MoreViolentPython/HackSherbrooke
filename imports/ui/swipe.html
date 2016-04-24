@@ -1,29 +1,44 @@
 <template name="swipe">
-  <h1>Activités</h1>
-  {{> categories}}
-  {{#with event counter}}
-    <h3>{{TITRE}}</h3>
-    <p>
-      Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
-      Coût : {{CO}}<br />
-      {{DESCRIP}}
-    </p>
-  {{/with}}
-  {{> buttons}}
-  <p>Prédiction: {{ prediction }}</p>
+  <div class="swipe">
+    <div class="container">
+      <h1>Activités</h1>
+      {{#with event counter}}
+        <h3>{{TITRE}}</h3>
+        <p>
+          Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
+          Coût : {{CO}}<br />
+          {{DESCRIP}}
+        </p>
+      {{/with}}
+    </div>
+
+    <div class="map-container">
+      {{> googleMap name="eventMap" options=eventMapOptions}}
+    </div>
+
+    <div class="container">
+      <div class="row">
+        {{> buttons}}
+      </div>
+
+      <div class="row prediction">
+        <p>Prédiction: {{ prediction }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="buttons">
-    <button id="like">LIKE</button>
-    <button id="dislike">DISLIKE</button>
+  <button class="btn btn-default" id="dislike">BOFF</button>
+  <button class="btn btn-default" id="like">J'EMBARQUE</button>
 </template>
 
 <template name="categories">
   <select id="category-select">
-      <option disabled="disabled" selected="selected">Please Select</option> 
-      {{#each categories}}
-          <option value="{{this}}">{{this}}</option>
-      {{/each}}
+    <option disabled="disabled" selected="selected">Please Select</option>
+    {{#each categories}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
   </select>
 </template>
 
