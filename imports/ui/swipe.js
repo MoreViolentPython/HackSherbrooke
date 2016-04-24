@@ -62,13 +62,11 @@ Template.buttons.events({
     e.preventDefault();
     window.location.href = '/chat?id=' + Session.get("counter") + '&ville=' + category;
     bayes.train(events[Session.get("counter")].DESCRIP, "like");
-    console.log('like');
   },
   "click #dislike": function (e) {
     Session.set("counter", Session.get("counter") + 1);
     e.preventDefault();
     bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
-    console.log('dislike');
   }
 });
 
@@ -81,6 +79,7 @@ Template.categories.helpers({
 Template.categories.events({
     "change #category-select": function (event, template) {
       category = $(event.currentTarget).val();
+      Session.set("counter", 100);
       Session.set("counter", 0);
     }
 });
