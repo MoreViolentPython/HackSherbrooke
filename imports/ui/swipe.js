@@ -70,12 +70,6 @@ Template.buttons.events({
   }
 });
 
-Template.categories.helpers({
-    categories: function(){
-        return ["quebec", "sherbrooke"];
-    }
-});
-
 Template.categories.events({
     "change #category-select": function (event, template) {
       category = $(event.currentTarget).val();
