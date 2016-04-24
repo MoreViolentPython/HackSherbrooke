@@ -1,14 +1,15 @@
 <template name="chat">
+  <div class="chat">
   <div class="row">
     <div class="container col-md-6 event">
 
       <div class="card">
-        <h1>Title</h1>
+        <p id="title">{{event.TITRE}}</p>
         <img src="/images/randonnee.png" alt="">
       </div>
       <div class="info">
 
-          <p>Details...</p>
+          <p>{{event.DESCRIP}}</p>
 
       </div>
 
@@ -26,6 +27,7 @@
       </div>
       {{> input}}
     </div>
+  </div>
   </div>
 </template>
 

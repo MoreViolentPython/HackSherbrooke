@@ -1,3 +1,9 @@
-.home h1 {
-  border-bottom-style: solid;
+.home {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.home h2 span {
+  border-top-style: solid;
+  padding-top: 8px; 
 }

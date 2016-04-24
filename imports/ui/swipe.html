@@ -1,3 +1,23 @@
 <template name="swipe">
-  swipe
+
+<h1>Activités</h1>
+  {{#with event counter}}
+    <h3>{{TITRE}}</h3>
+    <p>
+      Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
+      Coût : {{CO}}<br />
+      {{DESCRIP}}
+    </p>
+  {{/with}}
+{{> buttons}}
+
+</template>
+
+<template name="events">
+
+</template>
+
+<template name="buttons">
+    <button id="like">LIKE</button>
+    <button id="dislike">DISLIKE</button>
 </template>
