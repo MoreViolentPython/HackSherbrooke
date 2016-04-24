@@ -5,6 +5,8 @@ import './selection.html';
 
 Session.setDefault("chosenCategories", []);
 
+var classifier = require('classifier');
+
 Template.selection.events({
     'click .vignette': function(event, template) {
         template.$('.vignette[data-id="'+this.id+'"]').toggleClass("checked");
