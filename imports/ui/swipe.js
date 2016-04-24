@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { EventsSherbrooke } from '../api/events.js';
 import { EventsQuebec } from '../api/events.js';
+import { EventsGatineau } from '../api/events.js';
 
 import './swipe.html'
 
@@ -45,8 +46,10 @@ Template.swipe.helpers({
             events = EventsQuebec.find({}).fetch();
         } else if (category == "sherbrooke") {
             events = EventsSherbrooke.find({}).fetch();
+        } else if (category == "gatineau") {
+            events = EventsGatineau.find({}).fetch();
         }
-        Session.set("prediction", bayes.classify(events[Session.get("counter")].DESCRIP));
+        //Session.set("prediction", bayes.classify(events[Session.get("counter")].DESCRIP));
         return events[index];
     },
     counter(){
@@ -54,6 +57,27 @@ Template.swipe.helpers({
     },
     prediction(){
         return Session.get("prediction");
+    },
+    sherbrooke(){
+        if (category == "sherbrooke") {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    quebec(){
+        if (category == "quebec") {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    gatineau(){
+        if (category == "gatineau") {
+            return true;
+        } else {
+            return false;
+        }
     },
     eventMapOptions: function() {
         // Make sure the maps API has loaded
@@ -71,12 +95,12 @@ Template.buttons.events({
   "click #like": function (e, template) {
     e.preventDefault();
     window.location.href = '/chat?id=' + Session.get("counter") + '&ville=' + category;
-    bayes.train(events[Session.get("counter")].DESCRIP, "like");
+    //bayes.train(events[Session.get("counter")].DESCRIP, "like");
   },
   "click #dislike": function (e) {
     Session.set("counter", Session.get("counter") + 1);
     e.preventDefault();
-    bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
+    //bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
   }
 });
 

@@ -4,12 +4,33 @@
       <h1>Activités</h1>
       {{> categories}}
       {{#with event counter}}
+      {{#if sherbrooke}}
         <h3>{{TITRE}}</h3>
         <p>
           Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
           Coût : {{CO}}<br />
-          {{DESCRIP}}
+          URL : {{URL}}<br />
+          {{DESCRIP}}<br />
         </p>
+      {{/if}}
+      {{#if quebec}}
+        <h3>{{TITRE}}</h3>
+        <p>
+          Heure : {{HOR}}<br />
+          Date : {{DT01}} au {{DT02}}<br />
+          URL : {{URL}}<br />
+          {{DESCRIP}}<br />
+        </p>
+      {{/if}}
+      {{#if gatineau}}
+        <h3>{{properties.TITRE}}</h3>
+        <p>
+          Date : {{properties.DT01}} au {{properties.DT02}}<br />
+          Lieu : {{properties.LOC}}<br />
+          URL : {{URL}}<br />
+          {{DESCRIP}}<br />
+        </p>
+      {{/if}}
       {{/with}}
     </div>
 
@@ -37,7 +58,8 @@
 <template name="categories">
   <select id="category-select">
     <option value="sherbrooke" selected>sherbrooke</option>
-    <option value="quebec">quebec</option>  
+    <option value="quebec">quebec</option>
+    <option value="gatineau">gatineau</option>  
   </select>
 </template>
 
