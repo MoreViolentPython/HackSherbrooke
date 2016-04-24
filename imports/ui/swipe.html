@@ -8,6 +8,8 @@
         <h3>{{TITRE}}</h3>
         <p>
           Horaire : {{HOR}}, de {{HR01}} à {{HR02}}<br />
+          Date : {{DT01}} au {{DT02}}<br />
+          Lieu : {{LOC}}<br />
           Coût : {{CO}}<br />
           URL : {{URL}}<br />
           {{DESCRIP}}<br />
@@ -18,6 +20,7 @@
         <p>
           Heure : {{HOR}}<br />
           Date : {{DT01}} au {{DT02}}<br />
+          Lieu : {{LOC}}<br />
           URL : {{URL}}<br />
           {{DESCRIP}}<br />
         </p>
@@ -27,8 +30,8 @@
         <p>
           Date : {{properties.DT01}} au {{properties.DT02}}<br />
           Lieu : {{properties.LOC}}<br />
-          URL : {{URL}}<br />
-          {{DESCRIP}}<br />
+          URL : {{properties.URL}}<br />
+          {{properties.DESCRIP}}<br />
         </p>
       {{/if}}
       {{/with}}
