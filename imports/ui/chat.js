@@ -8,8 +8,6 @@ var getQueryParameters = function(str) {
   return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
 }
 
-
-console.log();
 Template.chat.helpers({
   messages() {
     return Messages.find({});
@@ -27,7 +25,7 @@ Template.input.events({
     const target = event.target;
     const text = target.text.value;
     Messages.insert({
-      username: 'Username',
+      username: Meteor.user().username,
       text,
       createdAt: new Date(),
     });
