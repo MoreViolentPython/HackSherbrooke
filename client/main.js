@@ -18,3 +18,4 @@ import '../imports/ui/login.css';
 import '../imports/ui/register.js';
 
 import '../imports/ui/swipe.js';
+import '../imports/ui/swipe.css';
