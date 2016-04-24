@@ -58,18 +58,18 @@ Template.swipe.helpers({
 });
 
 Template.buttons.events({
-    "click #like": function (e, template) {
-        e.preventDefault();
-        window.location.href = '/chat?id=' + Session.get("counter");
-        bayes.train(events[Session.get("counter")].DESCRIP, "like");
-        console.log('like');
-    },
-    "click #dislike": function (e) {
-        Session.set("counter", Session.get("counter") + 1);
-        e.preventDefault();
-        bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
-        console.log('dislike');
-    }
+  "click #like": function (e, template) {
+    e.preventDefault();
+    window.location.href = '/chat?id=' + Session.get("counter") + '&ville=' + category;
+    bayes.train(events[Session.get("counter")].DESCRIP, "like");
+    console.log('like');
+  },
+  "click #dislike": function (e) {
+    Session.set("counter", Session.get("counter") + 1);
+    e.preventDefault();
+    bayes.train(events[Session.get("counter")].DESCRIP, "dislike");
+    console.log('dislike');
+  }
 });
 
 Template.categories.helpers({

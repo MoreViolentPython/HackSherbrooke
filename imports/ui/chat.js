@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Messages } from '../api/messages.js';
-import { Events } from '../api/events.js';
+import { EventsSherbrooke } from '../api/events.js';
+import { EventsQuebec } from '../api/events.js';
 
 import './chat.html';
 
@@ -15,7 +16,13 @@ Template.chat.helpers({
     return Messages.find({activiteId: activiteId});
   },
   event() {
-    var events = Events.find({}).fetch();
+    var category = getQueryParameters().ville;
+    var events;
+    if (category == "quebec") {
+      events = EventsQuebec.find({}).fetch();
+    } else if (category == "sherbrooke") {
+      events = EventsSherbrooke.find({}).fetch();
+    }
     return events[activiteId];
   }
 });
