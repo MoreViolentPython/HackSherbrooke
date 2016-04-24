@@ -97,3 +97,11 @@ Template.selection.helpers({
         return Session.get("chosenCategories");
     }
 });
+
+Template.selectionButtons.events({
+    "click .next": function (e) {
+        e.preventDefault();
+        Router.go('/swipe?categories=' + Session.get("chosenCategories"));
+        console.log('next');
+    }
+})

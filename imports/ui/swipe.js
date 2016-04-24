@@ -16,7 +16,7 @@ Template.swipe.helpers({
 });
 
 Template.buttons.events({
-  "click #like": function (e, template) {
+  "click .like": function (e, template) {
     e.preventDefault();
     Router.go('/chat?id=' + Session.get("counter"));
     console.log('like');
@@ -24,7 +24,6 @@ Template.buttons.events({
   "click #dislike": function (e) {
     Session.set("counter", Session.get("counter") + 1);
     e.preventDefault();
-    console.log('dislike');
-
+    alert.log('dislike');
   }
 });
